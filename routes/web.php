@@ -17,14 +17,8 @@ Route::get('/', function () {
     return view('importexport');
 });
 
-/* Upload File */
-Route::get('/uploadfile','UploadFileController@index');
-Route::post('/uploadfile','UploadFileController@showUploadFile');
-
 /* Excel import export */
-// Route::get('export'          , 'UsersController@export')->name('export');
 Route::get('export'          , 'AttendanceController@export')->name('export');
 Route::post('import'         , 'AttendanceController@import')->name('import');
 
 Route::get('importExportView', 'UsersController@importExportView');
-// Route::post('import'         , 'UsersController@import')->name('import');
