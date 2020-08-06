@@ -14,10 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('importexport');
 });
 
-/*Excel import export*/
-Route::get('export'          , 'UsersController@export')->name('export');
+/* Upload File */
+Route::get('/uploadfile','UploadFileController@index');
+Route::post('/uploadfile','UploadFileController@showUploadFile');
+
+/* Excel import export */
+// Route::get('export'          , 'UsersController@export')->name('export');
+Route::get('export'          , 'AttendanceController@export')->name('export');
+Route::post('import'         , 'AttendanceController@import')->name('import');
+
 Route::get('importExportView', 'UsersController@importExportView');
-Route::post('import'         , 'UsersController@import')->name('import');
+// Route::post('import'         , 'UsersController@import')->name('import');
