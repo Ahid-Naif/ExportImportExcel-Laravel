@@ -19,6 +19,7 @@ Route::get('/', function () {
 
 /* Excel import export */
 Route::get('export'          , 'AttendanceController@export')->name('export');
+Route::get('exportView'          , 'AttendanceController@exportView')->name('exportview');
 Route::post('import'         , 'AttendanceController@import')->name('import');
 
 Route::get('importExportView', 'UsersController@importExportView');
